@@ -21,7 +21,7 @@ function setup() {
   groundA=new Ground(600,400,400,2);
   groundB=new Ground(1000,200,300,2);
   border1=new Ground(600,1,1200,1);
-  border2=new Ground(600,700,1200,1)
+  //border2=new Ground(600,700,1200,1)
   border3= new Ground(0,350,1,700);
   border4=new Ground(1200,350,1,700)
   border1.debug=true
@@ -37,8 +37,8 @@ function setup() {
   b4=new Box(970,115,70,50,"dodgerblue");
   b5=new Box(1040,115,70,50,"yellow");
   b6=new Box(1000,70,70,50,"hotpink");
-  polygon=Matter.Bodies.circle(200,200,22,{'restitution':0.8,
-  'friction':1.5,'density':0.8},6);
+  polygon=Matter.Bodies.circle(200,200,30,{'restitution':0.8,
+  'friction':1.5,'density':1.8},6);
   World.add(world,polygon);
   launcher=new Slingshot(polygon,{x:200,y:110})
 }
@@ -48,6 +48,9 @@ function draw() {
    
   Engine.update(engine);
   border1.display();
+  //border2.display();
+  border3.display();
+  border4.display();
   groundA.display();
   groundB.display();
   a1.display();
@@ -63,8 +66,8 @@ function draw() {
   b5.display();
   b6.display();
   imageMode(CENTER);
-  image(polygonImage,polygon.position.x,polygon.position.y,50,50)
-  text(mouseX+","+mouseY,mouseX,mouseY);
+  image(polygonImage,polygon.position.x,polygon.position.y,60,65)
+  //text(mouseX+","+mouseY,mouseX,mouseY);
   launcher.display();
   drawSprites();
 }
